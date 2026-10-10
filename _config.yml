@@ -1,0 +1,14 @@
+title: SwampDrain
+author: Michał Kalbarczyk
+description: VST
+url: "https://swampdrain.fazibear.me"
+
+permalink: /v/:title/
+
+# collections:
+#   versions:
+#     output: false
+
+# plugins:
+#   - jekyll-feed
+#   - jekyll-sitemap
