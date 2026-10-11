@@ -5,16 +5,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="">
-  <title>{{ site.title }}</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '???');
-  </script>
+  <meta name="description" content="Fazi Audio. Audio plugins with vintage soul and a modern workflow. Timeless tools for modern creators.">
+  <meta name="theme-color" content="#050510">
+  <title>{{ site.title }} — Sound different</title>
+  <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
+  <script src="{{ '/assets/app.js' | relative_url }}" defer></script>
 </head>
 <body>
-  <h1>Audio</h1>
+  <header class="site-header" id="home">
+    {% include logo.html %}
+    {% include top-menu.html %}
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow">Plugins for a</p><h1 id="hero-title">Brighter tomorrow</h1><p class="tagline">Timeless tools for modern creators.</p><span class="short-rule"></span><a class="button" href="#plugins">Explore plugins <span aria-hidden="true">⟶</span></a></div>
+    </section>
+    <section class="features" id="about" aria-label="Our philosophy">
+      <article><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M2 24h9l4-10 5 22 6-32 7 40 6-30 5 17 5-7h13"/></svg><h2>Iconic character</h2><p>Vintage soul.<br>Modern workflow.</p></article>
+      <article><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M15 3v42M32 3v42M49 3v42M10 16h10v6H10zM27 28h10v6H27zM44 12h10v6H44z"/></svg><h2>Creative control</h2><p>Inspiring tools<br>that sound different.</p></article>
+      <article><svg viewBox="0 0 64 48" aria-hidden="true"><circle cx="24" cy="24" r="15"/><circle cx="41" cy="24" r="15"/></svg><h2>Built for creators</h2><p>From bedroom producers<br>to pro studios.</p></article>
+      <article><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M10 7h44L32 44zM15 10l17 28 17-28M15 10l17 5 17-5M32 15v23"/></svg><h2>A brighter tomorrow</h2><p>Timeless sound<br>for what’s next.</p></article>
+    </section>
+    <section class="spotlight" id="plugins" aria-labelledby="plugins-title">
+      <div class="spotlight-copy"><p class="eyebrow">DAW plugins</p><h2 id="plugins-title">Sound<br>different</h2><p>Fazi Audio creates DAW plugins with character, depth and vibe. Inspired by the golden era, engineered for today.</p><a class="button" href="#contact">Get in touch <span aria-hidden="true">⟶</span></a></div>
+    </section>
+    <section class="sound-section" id="sound"><p class="eyebrow">Vintage soul. Modern workflow.</p><h2>Made for your next idea.</h2><p>Color, space, and movement. Inspired by the golden era, made for modern creators.</p></section>
+  </main>
+  <footer id="contact">{% include logo.html class="footer-brand" loading="lazy" %}<p>Timeless tools. Endless possibilities.</p><a href="mailto:audio@fazibear.me">Let’s talk <span aria-hidden="true">↗</span></a><small>© {{ 'now' | date: '%Y' }} Fazi Audio</small></footer>
+</body>
 </html>
