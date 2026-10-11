@@ -1,0 +1,9 @@
+version: "0.9.4"
+url: https://github.com/fazibear/namplifier.fazibear.me/releases/tag/0.9.4
+downloads:
+  - platform: macOS
+    url: https://github.com/fazibear/namplifier.fazibear.me/releases/download/0.9.4/namplifier-macos.pkg
+  - platform: Windows
+    url: https://github.com/fazibear/namplifier.fazibear.me/releases/download/0.9.4/namplifier-windows.exe
+  - platform: Linux
+    url: https://github.com/fazibear/namplifier.fazibear.me/releases/download/0.9.4/namplifier-linux.tar.gz

@@ -1,0 +1,9 @@
+version: "0.9.2"
+url: https://github.com/fazibear/swampdrain.fazibear.me/releases/tag/0.9.2
+downloads:
+  - platform: macOS
+    url: https://github.com/fazibear/swampdrain.fazibear.me/releases/download/0.9.2/swampdrain-macos.pkg
+  - platform: Windows
+    url: https://github.com/fazibear/swampdrain.fazibear.me/releases/download/0.9.2/swampdrain-windows.exe
+  - platform: Linux
+    url: https://github.com/fazibear/swampdrain.fazibear.me/releases/download/0.9.2/swampdrain-linux.tar.gz

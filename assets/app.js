@@ -1,5 +1,5 @@
 (() => {
-  const links = [...document.querySelectorAll('nav a')];
+  const links = [...document.querySelectorAll('nav a')].filter(link => link.pathname === window.location.pathname && link.hash);
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;

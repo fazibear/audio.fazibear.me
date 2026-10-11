@@ -17,9 +17,7 @@
     {% include top-menu.html %}
   </header>
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy"><p class="eyebrow">Plugins for a</p><h1 id="hero-title">Brighter tomorrow</h1><p class="tagline">Timeless tools for modern creators.</p><span class="short-rule"></span><a class="button" href="#plugins">Explore plugins <span aria-hidden="true">⟶</span></a></div>
-    </section>
+    {% include plugin-tint.html %}
     <section class="features" id="about" aria-label="Our philosophy">
       <article><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M2 24h9l4-10 5 22 6-32 7 40 6-30 5 17 5-7h13"/></svg><h2>Iconic character</h2><p>Vintage soul.<br>Modern workflow.</p></article>
       <article><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M15 3v42M32 3v42M49 3v42M10 16h10v6H10zM27 28h10v6H27zM44 12h10v6H44z"/></svg><h2>Creative control</h2><p>Inspiring tools<br>that sound different.</p></article>
@@ -27,10 +25,15 @@
       <article><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M10 7h44L32 44zM15 10l17 28 17-28M15 10l17 5 17-5M32 15v23"/></svg><h2>A brighter tomorrow</h2><p>Timeless sound<br>for what’s next.</p></article>
     </section>
     <section class="spotlight" id="plugins" aria-labelledby="plugins-title">
-      <div class="spotlight-copy"><p class="eyebrow">DAW plugins</p><h2 id="plugins-title">Sound<br>different</h2><p>Fazi Audio creates DAW plugins with character, depth and vibe. Inspired by the golden era, engineered for today.</p><a class="button" href="#contact">Get in touch <span aria-hidden="true">⟶</span></a></div>
+      <div class="spotlight-copy"><p class="eyebrow">DAW plugins</p><h1 id="plugins-title">Sound<br>different</h1><p>Fazi Audio creates DAW plugins with character, depth and vibe. Inspired by the golden era, engineered for today.</p></div>
+      <div class="plugin-list">
+        {% for plugin in site.data.plugins %}
+          {% include plugin-card.html plugin=plugin %}
+        {% endfor %}
+      </div>
     </section>
     <section class="sound-section" id="sound"><p class="eyebrow">Vintage soul. Modern workflow.</p><h2>Made for your next idea.</h2><p>Color, space, and movement. Inspired by the golden era, made for modern creators.</p></section>
   </main>
-  <footer id="contact">{% include logo.html class="footer-brand" loading="lazy" %}<p>Timeless tools. Endless possibilities.</p><a href="mailto:audio@fazibear.me">Let’s talk <span aria-hidden="true">↗</span></a><small>© {{ 'now' | date: '%Y' }} Fazi Audio</small></footer>
+  {% include footer.html %}
 </body>
 </html>
