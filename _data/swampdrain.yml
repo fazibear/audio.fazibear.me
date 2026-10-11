@@ -10,7 +10,6 @@ features:
   - Low-mid clarity
   - Note definition
   - Harmonic weight
-
 downloads:
   - platform: macOS
     file: swampdrain-macos.pkg

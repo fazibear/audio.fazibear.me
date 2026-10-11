@@ -60,7 +60,6 @@ h3 { font-size: 26px; margin: 0 0 14px; }
 .plugin-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
 .plugin-download { color: var(--accent); font-size: 11px; border-bottom: 1px solid #433638; padding: 4px 0; }
 .plugin-download:hover { color: var(--text); }
-.plugin-status { color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; font-size: 9px; }
 
 
 
@@ -176,7 +175,7 @@ footer small { font-size: 12px; }
 .plugin-actions .button { font-size: 12px; letter-spacing: 1px; padding: 14px 20px; gap: 14px; border-color: #573538; }
 .plugin-actions .button:hover { background: #211719; border-color: #956467; }
 .plugin-actions .button span { font-size: 17px; }
-.plugin-download,.plugin-status { font-size: 12px; }
+.plugin-download { font-size: 12px; }
 
 
 

@@ -1,3 +1,4 @@
+version: 0.0.0
 name: MT666
 category: Metal distortion
 description: Metal Zone-inspired distortion for heavy guitar tones. Shape the low end, dial in the mids with a dedicated frequency control, and set the bite with the high EQ.
@@ -9,6 +10,4 @@ features:
   - Heavy guitar distortion
   - Low-end weight
   - Midrange character
-
-status: Coming soon
 downloads: []

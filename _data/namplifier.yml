@@ -10,7 +10,6 @@ features:
   - Amp tones from the web
   - Cabinet realism
   - Tight high-gain tones
-
 downloads:
   - platform: macOS
     file: namplifier-macos.pkg

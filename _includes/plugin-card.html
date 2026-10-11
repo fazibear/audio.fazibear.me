@@ -16,8 +16,6 @@
       <a class="button" href="{{ plugin_url | relative_url }}">Explore {{ include.plugin.name }} <span aria-hidden="true">⟶</span></a>
       {% if include.plugin.downloads.size > 0 %}
         <a class="plugin-download" href="{{ plugin_url | relative_url }}#download">Download <span aria-hidden="true">↓</span></a>
-      {% else %}
-        <span class="plugin-status">{{ include.plugin.status | default: 'Coming soon' }}</span>
       {% endif %}
     </div>
   </div>

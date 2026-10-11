@@ -23,12 +23,12 @@ layout: default
   </section>
   <nav class="product-nav" aria-label="{{ plugin.name }} page sections">
     {% for section in page.sections %}<a href="#{{ section.id }}">{{ section.label }}</a>{% endfor %}
-    <a href="#download">{% if plugin.downloads.size > 0 %}Download{% else %}Availability{% endif %}</a>
+    {% if plugin.downloads.size > 0 %}<a href="#download">Download</a>{% endif %}
     {% if page.community %}<a href="#community">Community</a>{% endif %}
   </nav>
   {{ content }}
+  {% if plugin.downloads.size > 0 %}
   <section class="product-section product-download-section" id="download" aria-labelledby="download-title">
-    {% if plugin.downloads.size > 0 %}
     <p class="eyebrow">Download</p>
     <h2 id="download-title">Get {{ plugin.name }}.</h2>
     <p>Current version: <strong>{{ plugin.version }}</strong>. Choose your platform to download.</p>
@@ -39,12 +39,8 @@ layout: default
       {% endfor %}
     </div>
     {% if page.install_note %}<p class="install-note">{{ page.install_note }}</p>{% endif %}
-    {% else %}
-    <p class="eyebrow">{{ plugin.name }}</p>
-    <h2 id="download-title">{{ plugin.status | default: 'Coming soon' }}.</h2>
-    <p>Downloads will be available here when {{ plugin.name }} is released.</p>
-    {% endif %}
   </section>
+  {% endif %}
   {% if page.community %}
   <section class="product-section" id="community" aria-labelledby="community-title">
     <p class="eyebrow">{{ plugin.name }}</p>
