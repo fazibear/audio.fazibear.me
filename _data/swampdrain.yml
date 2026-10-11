@@ -1,9 +1,20 @@
 version: "0.9.2"
-url: https://github.com/fazibear/swampdrain.fazibear.me/releases/tag/0.9.2
+name: SwampDrain
+category: Low-tuning clarity
+description: Clear the mud from down-tuned guitars and basses while keeping their weight, impact, and character. Restore pick definition and keep individual notes readable with four focused controls.
+image: /assets/plugins/swampdrain.png
+image_width: 818
+image_height: 1134
+slug: swampdrain
+features:
+  - Low-mid clarity
+  - Note definition
+  - Harmonic weight
+
 downloads:
   - platform: macOS
-    url: https://github.com/fazibear/swampdrain.fazibear.me/releases/download/0.9.2/swampdrain-macos.pkg
+    file: swampdrain-macos.pkg
   - platform: Windows
-    url: https://github.com/fazibear/swampdrain.fazibear.me/releases/download/0.9.2/swampdrain-windows.exe
+    file: swampdrain-windows.exe
   - platform: Linux
-    url: https://github.com/fazibear/swampdrain.fazibear.me/releases/download/0.9.2/swampdrain-linux.tar.gz
+    file: swampdrain-linux.tar.gz

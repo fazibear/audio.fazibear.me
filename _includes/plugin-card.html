@@ -1,14 +1,11 @@
-{% assign release = site.data[include.plugin.slug] %}
-<article class="plugin-card" aria-labelledby="plugin-{{ include.plugin.name | slugify }}">
-  <a class="plugin-artwork" href="{{ include.plugin.url | relative_url }}" aria-label="Explore {{ include.plugin.name }}">
-    <span class="plugin-image-layers">
-      <img class="plugin-image-original" src="{{ include.plugin.image | relative_url }}" alt="{{ include.plugin.name }} plugin interface" width="{{ include.plugin.image_width }}" height="{{ include.plugin.image_height }}" loading="lazy" decoding="async">
-      <img class="plugin-image-tinted" src="{{ include.plugin.image | relative_url }}" alt="" aria-hidden="true" width="{{ include.plugin.image_width }}" height="{{ include.plugin.image_height }}" loading="lazy" decoding="async">
-    </span>
+{% assign plugin_url = '/' | append: include.plugin.slug | append: '/' %}
+<article class="plugin-card plugin-{{ include.plugin.slug }}" aria-labelledby="plugin-{{ include.plugin.name | slugify }}">
+  <a class="plugin-artwork gothic-frame" href="{{ plugin_url | relative_url }}" aria-label="Explore {{ include.plugin.name }}">
+    <img src="{{ include.plugin.image | relative_url }}" alt="{{ include.plugin.name }} plugin interface" width="{{ include.plugin.image_width }}" height="{{ include.plugin.image_height }}" loading="lazy" decoding="async">
   </a>
   <div class="plugin-details">
-    <p class="eyebrow">{{ include.plugin.category }}</p>
     <h3 id="plugin-{{ include.plugin.name | slugify }}">{{ include.plugin.name }}</h3>
+    <p class="eyebrow">{{ include.plugin.category }}</p>
     <p class="plugin-description">{{ include.plugin.description }}</p>
     <ul class="plugin-features" aria-label="{{ include.plugin.name }} features">
       {% for feature in include.plugin.features %}
@@ -16,11 +13,11 @@
       {% endfor %}
     </ul>
     <div class="plugin-actions">
-      <a class="button" href="{{ include.plugin.url | relative_url }}">Explore {{ include.plugin.name }} <span aria-hidden="true">⟶</span></a>
-      {% if release.downloads.size > 0 %}
-        <a class="plugin-download" href="{{ include.plugin.url | relative_url }}#download">Download <span aria-hidden="true">↓</span></a>
+      <a class="button" href="{{ plugin_url | relative_url }}">Explore {{ include.plugin.name }} <span aria-hidden="true">⟶</span></a>
+      {% if include.plugin.downloads.size > 0 %}
+        <a class="plugin-download" href="{{ plugin_url | relative_url }}#download">Download <span aria-hidden="true">↓</span></a>
       {% else %}
-        <span class="plugin-status">{{ release.status | default: 'Coming soon' }}</span>
+        <span class="plugin-status">{{ include.plugin.status | default: 'Coming soon' }}</span>
       {% endif %}
     </div>
   </div>

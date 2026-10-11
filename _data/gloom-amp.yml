@@ -1,2 +1,14 @@
+name: Gloom Amp
+category: Low-tuned guitar amplifier
+description: A virtual amplifier for low-tuned guitars. Shape your sound with drive, three-band EQ, and presence controls, with input and output levels to fit your signal chain.
+image: /assets/plugins/gloom-amp.png
+image_width: 1983
+image_height: 793
+slug: gloom-amp
+features:
+  - Low-tuned amplification
+  - Gain and character
+  - High-end bite
+
 status: Coming soon
 downloads: []

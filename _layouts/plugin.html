@@ -1,9 +1,8 @@
 ---
 layout: default
 ---
-{% assign plugin = site.data.plugins | where: 'slug', page.plugin | first %}
-{% assign release = site.data[page.plugin] %}
-<div class="plugin-page">
+{% assign plugin = site.data[page.plugin] %}
+<div class="plugin-page plugin-{{ page.plugin }}">
   <section class="product-hero" aria-labelledby="product-title">
     <div class="product-intro">
       <a class="back-link" href="{{ '/' | relative_url }}#plugins">← All plugins</a>
@@ -11,54 +10,48 @@ layout: default
       <h1 id="product-title">{{ plugin.name }}</h1>
       <p class="product-headline">{{ page.headline }}</p>
       <p class="product-summary">{{ plugin.description }}</p>
-      {% if release.downloads.size > 0 %}
+      {% if plugin.downloads.size > 0 %}
         <a class="button" href="#download">Download {{ plugin.name }} <span aria-hidden="true">↓</span></a>
       {% else %}
         <a class="button" href="#controls">Explore the controls <span aria-hidden="true">↓</span></a>
       {% endif %}
       {% if page.formats %}<p class="product-formats">{{ page.formats }}</p>{% endif %}
     </div>
-    <img class="product-image" src="{{ plugin.image | relative_url }}" alt="{{ plugin.name }} plugin interface" width="{{ plugin.image_width }}" height="{{ plugin.image_height }}" fetchpriority="high">
+    <div class="product-artwork gothic-frame">
+      <img class="product-image" src="{{ plugin.image | relative_url }}" alt="{{ plugin.name }} plugin interface" width="{{ plugin.image_width }}" height="{{ plugin.image_height }}" fetchpriority="high">
+    </div>
   </section>
   <nav class="product-nav" aria-label="{{ plugin.name }} page sections">
     {% for section in page.sections %}<a href="#{{ section.id }}">{{ section.label }}</a>{% endfor %}
-    <a href="#download">{% if release.downloads.size > 0 %}Download{% else %}Availability{% endif %}</a>
-    {% unless page.support == false %}<a href="#support">Support</a>{% endunless %}
+    <a href="#download">{% if plugin.downloads.size > 0 %}Download{% else %}Availability{% endif %}</a>
+    {% if page.community %}<a href="#community">Community</a>{% endif %}
   </nav>
   {{ content }}
   <section class="product-section product-download-section" id="download" aria-labelledby="download-title">
-    {% if release.downloads.size > 0 %}
+    {% if plugin.downloads.size > 0 %}
     <p class="eyebrow">Download</p>
     <h2 id="download-title">Get {{ plugin.name }}.</h2>
-    <p>Current version: <strong>{{ release.version }}</strong>. Choose your platform to download.</p>
+    <p>Current version: <strong>{{ plugin.version }}</strong>. Choose your platform to download.</p>
     <div class="download-links">
-      {% for download in release.downloads %}
-        <a class="button" href="{{ download.url }}">{{ download.platform }} <span aria-hidden="true">↓</span></a>
+      {% for download in plugin.downloads %}
+        {% assign download_url = '/download/' | append: plugin.slug | append: '/' | append: download.file %}
+        <a class="button" href="{{ download_url | relative_url }}" download>{{ download.platform }} <span aria-hidden="true">↓</span></a>
       {% endfor %}
     </div>
-    <a class="release-link" href="{{ release.url }}">Release notes and all downloads <span aria-hidden="true">↗</span></a>
     {% if page.install_note %}<p class="install-note">{{ page.install_note }}</p>{% endif %}
     {% else %}
     <p class="eyebrow">{{ plugin.name }}</p>
-    <h2 id="download-title">{{ release.status | default: 'Coming soon' }}.</h2>
+    <h2 id="download-title">{{ plugin.status | default: 'Coming soon' }}.</h2>
     <p>Downloads will be available here when {{ plugin.name }} is released.</p>
     {% endif %}
   </section>
-  {% unless page.support == false %}
-  <section class="product-section product-support" id="support" aria-labelledby="support-title">
-    <p class="eyebrow">Support the project</p>
-    <h2 id="support-title">Enjoying {{ plugin.name }}?</h2>
-    <p>Your support helps maintain the plugin, ship updates, and keep independent audio software alive.</p>
-    <div class="support-links">
-      <a class="button" href="https://ko-fi.com/fazibear">Ko-fi <span aria-hidden="true">↗</span></a>
-      <a class="button" href="https://buymeacoffee.com/fazibear">Buy Me a Coffee <span aria-hidden="true">↗</span></a>
-      <a class="button" href="https://github.com/sponsors/fazibear">GitHub Sponsors <span aria-hidden="true">↗</span></a>
-    </div>
-    {% if page.community %}
+  {% if page.community %}
+  <section class="product-section" id="community" aria-labelledby="community-title">
+    <p class="eyebrow">{{ plugin.name }}</p>
+    <h2 id="community-title">Join the community.</h2>
     <div class="community-links" aria-label="{{ plugin.name }} community">
       {% for community in page.community %}<a href="{{ community.url }}">{{ community.name }} <span aria-hidden="true">↗</span></a>{% endfor %}
     </div>
-    {% endif %}
   </section>
-  {% endunless %}
+  {% endif %}
 </div>

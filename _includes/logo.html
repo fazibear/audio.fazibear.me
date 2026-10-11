@@ -1,3 +1,3 @@
 <a class="brand{% if include.class %} {{ include.class }}{% endif %}" href="{{ '/' | relative_url }}#home" aria-label="Fazi Audio home">
-  <img class="brand-source" src="{{ '/assets/design-reference.png' | relative_url }}" alt="Fazi Audio" width="1024" height="1536"{% if include.loading %} loading="{{ include.loading }}"{% endif %}>
+  <img class="brand-source" src="{{ include.image | default: '/assets/fazi-audio-logo-metal.png' | relative_url }}" alt="Fazi Audio" width="{{ include.width | default: 1946 }}" height="{{ include.height | default: 808 }}"{% if include.loading %} loading="{{ include.loading }}"{% endif %}>
 </a>

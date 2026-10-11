@@ -1,9 +1,20 @@
 version: "0.9.4"
-url: https://github.com/fazibear/namplifier.fazibear.me/releases/tag/0.9.4
+name: Namplifier
+category: Virtual guitar amplifier
+description: Bring Neural Amp Modeler tones into your DAW. Load amp models from the web and complete your signal chain with cabinet impulse responses, a three-band EQ, and a noise gate.
+image: /assets/plugins/namplifier.png
+image_width: 1080
+image_height: 1057
+slug: namplifier
+features:
+  - Amp tones from the web
+  - Cabinet realism
+  - Tight high-gain tones
+
 downloads:
   - platform: macOS
-    url: https://github.com/fazibear/namplifier.fazibear.me/releases/download/0.9.4/namplifier-macos.pkg
+    file: namplifier-macos.pkg
   - platform: Windows
-    url: https://github.com/fazibear/namplifier.fazibear.me/releases/download/0.9.4/namplifier-windows.exe
+    file: namplifier-windows.exe
   - platform: Linux
-    url: https://github.com/fazibear/namplifier.fazibear.me/releases/download/0.9.4/namplifier-linux.tar.gz
+    file: namplifier-linux.tar.gz

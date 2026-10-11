@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <defs>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#625c57"/>
+      <stop offset=".22" stop-color="#3a3834"/>
+      <stop offset=".48" stop-color="#746f68"/>
+      <stop offset=".55" stop-color="#2c2828"/>
+      <stop offset="1" stop-color="#504a45"/>
+    </linearGradient>
+    <g id="corner" stroke-linejoin="miter">
+      <path d="M4 4L23 12L48 10L40 16L22 18L18 22L16 40L10 48L12 23Z" fill="#0f0e0f" stroke="url(#steel)" stroke-width="1.2"/>
+      <path d="M4 4L17 17L18 22L16 40L10 48M17 17L22 18L40 16L48 10" stroke="#6a645d" stroke-width=".65"/>
+      <path d="M8 10L14 23L12 38M10 8L23 14L38 12" stroke="#3c191a" stroke-width="1.4"/>
+      <path d="M17 17L24 23L40 40L23 24Z" fill="#201c1c" stroke="#544e48" stroke-width=".7"/>
+      <path d="M27 13L29 23L39 26L29 29L26 39L23 29L13 27L23 24Z" fill="#0e0d0e" stroke="url(#steel)" stroke-width=".8"/>
+      <path d="M26 21L26 32M21 26L32 26" stroke="#645e57" stroke-width=".6"/>
+      <path d="M35 18L43 20M18 35L20 43M22 13L20 16M13 22L16 20" stroke="#443c37" stroke-width=".7"/>
+    </g>
+  </defs>
+  <path d="M48 10H192M230 48V192M192 230H48M10 192V48" stroke="#191516" stroke-width="5"/>
+  <path d="M48 10H192M230 48V192M192 230H48M10 192V48" stroke="url(#steel)" stroke-width="1.4"/>
+  <path d="M48 13H192M227 48V192M192 227H48M13 192V48" stroke="#34181a" stroke-width=".8"/>
+  <path d="M48 17H192M223 48V192M192 223H48M17 192V48" stroke="#312b2a" stroke-width=".5"/>
+  <use href="#corner"/>
+  <use href="#corner" transform="translate(240 0) rotate(90)"/>
+  <use href="#corner" transform="translate(240 240) rotate(180)"/>
+  <use href="#corner" transform="translate(0 240) rotate(270)"/>
+</svg>
