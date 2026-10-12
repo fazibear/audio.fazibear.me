@@ -4,7 +4,7 @@
     <img src="{{ include.plugin.image | relative_url }}" alt="{{ include.plugin.name }} plugin interface" width="{{ include.plugin.image_width }}" height="{{ include.plugin.image_height }}" loading="lazy" decoding="async">
   </a>
   <div class="plugin-details">
-    <h3 id="plugin-{{ include.plugin.name | slugify }}">{{ include.plugin.name }}</h3>
+    <h3 id="plugin-{{ include.plugin.name | slugify }}"><a href="{{ plugin_url | relative_url }}">{{ include.plugin.name }}</a></h3>
     <p class="eyebrow">{{ include.plugin.category }}</p>
     <p class="plugin-description">{{ include.plugin.description }}</p>
     <ul class="plugin-features" aria-label="{{ include.plugin.name }} features">
