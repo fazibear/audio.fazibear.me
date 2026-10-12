@@ -1,4 +1,4 @@
-version: "0.9.4"
+version: "0.9.5"
 name: Namplifier
 category: Virtual guitar amplifier
 description: Bring Neural Amp Modeler tones into your DAW. Load amp models from the web and complete your signal chain with cabinet impulse responses, a three-band EQ, and a noise gate.
