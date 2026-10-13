@@ -63,14 +63,6 @@ sections:
     answer: |
       The Linux build is the least-tested version. The original build uses Ubuntu with the following dependencies:
       <pre><code>sudo apt install libwayland-dev libx11-xcb-dev libxcb-dri2-0-dev libgl1-mesa-dev libxcb-icccm4-dev libxcursor-dev libxcb-{render,shape,xfixes}0-dev libasound2-dev libgl-dev libjack-dev libxcb1-dev libxkbcommon-dev libfontconfig1-dev</code></pre>
-- title: Join the Community!
-  community:
-  - name: Discord
-    url: https://discord.gg/bKmZtgGYfV
-  - name: X
-    url: https://x.com/namplifier666
-  - name: Reddit
-    url: https://www.reddit.com/r/namplifier
 downloads:
 - platform: macOS
   file: namplifier-macos.pkg

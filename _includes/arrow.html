@@ -1,0 +1,22 @@
+<svg class="gothic-arrow gothic-arrow-{{ include.direction | default: 'right' }}" width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+  {% case include.direction %}
+  {% when 'left' %}
+    <path d="M25 16H9M22 12V20" stroke="currentColor" stroke-width="1.4" />
+    <path d="M2 16 12 10 10 16 12 22Z" fill="currentColor" />
+    <path d="M25 16 28 13 31 16 28 19Z" stroke="currentColor" stroke-width="1.2" />
+  {% when 'down' %}
+    <path d="M16 7V23M12 11H20M8 25V29H24V25" stroke="currentColor" stroke-width="1.4" />
+    <path d="M16 27 10 18 16 20 22 18Z" fill="currentColor" />
+    <path d="M16 2 19 5 16 8 13 5Z" stroke="currentColor" stroke-width="1.2" />
+  {% when 'external' %}
+    <path d="M7 25 23 9M8 17 15 24" stroke="currentColor" stroke-width="1.4" />
+    <path d="M28 4 17 7 22 10 25 15Z" fill="currentColor" />
+    <path d="M3 27 7 23 11 27 7 31Z" stroke="currentColor" stroke-width="1.2" />
+    <path d="M21 3H29V11" stroke="currentColor" stroke-width="1.2" />
+  {% else %}
+    <path d="M7 16H23M12 12V20" stroke="currentColor" stroke-width="1.4" />
+    <path d="M30 16 20 10 22 16 20 22Z" fill="currentColor" />
+    <path d="M2 16 5 13 8 16 5 19Z" stroke="currentColor" stroke-width="1.2" />
+    <path d="M12 10 14 12 12 14 10 12ZM12 18 14 20 12 22 10 20Z" fill="currentColor" />
+  {% endcase %}
+</svg>

@@ -1,0 +1,9 @@
+<section class="main-community" id="community" aria-labelledby="community-title">
+  <p class="eyebrow">Community</p>
+  <h2 id="community-title">{{ site.data.community.title }}</h2>
+  <div class="community-links" aria-label="Community">
+    {% for link in site.data.community.links %}
+      <a href="{{ link.url }}">{{ link.name }} {% include arrow.html direction="external" %}</a>
+    {% endfor %}
+  </div>
+</section>

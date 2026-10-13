@@ -5,15 +5,15 @@ layout: default
 <div class="plugin-page plugin-{{ plugin.slug }}">
   <section class="product-hero" aria-labelledby="product-title">
     <div class="product-intro">
-      <a class="back-link" href="{{ '/' | relative_url }}#plugins">← All plugins</a>
+      <a class="back-link" href="{{ '/' | relative_url }}#plugins">{% include arrow.html direction="left" %} All plugins</a>
       <p class="eyebrow">{{ plugin.category }}</p>
       <h1 id="product-title">{{ plugin.name }}</h1>
       <p class="product-headline">{{ plugin.headline }}</p>
       <p class="product-summary">{{ plugin.description }}</p>
       {% if plugin.downloads.size > 0 %}
-        <a class="button" href="#download">Download {{ plugin.name }} <span aria-hidden="true">↓</span></a>
+        <a class="button" href="#download">Download {{ plugin.name }} {% include arrow.html direction="down" %}</a>
       {% else %}
-        <a class="button" href="#controls">Explore the controls <span aria-hidden="true">↓</span></a>
+        <a class="button" href="#controls">Explore the controls {% include arrow.html direction="down" %}</a>
       {% endif %}
       {% if plugin.formats %}<p class="product-formats">{{ plugin.formats | join: ' / ' }}</p>{% endif %}
     </div>
@@ -46,7 +46,7 @@ layout: default
     {% for item in section.faq %}<details><summary>{{ item.question }}</summary>{{ item.answer }}</details>{% endfor %}
     {% if section.community %}
     <div class="community-links" aria-label="{{ plugin.name }} community">
-      {% for community in section.community %}<a href="{{ community.url }}">{{ community.name }} <span aria-hidden="true">↗</span></a>{% endfor %}
+      {% for community in section.community %}<a href="{{ community.url }}">{{ community.name }} {% include arrow.html direction="external" %}</a>{% endfor %}
     </div>
     {% endif %}
   </section>
@@ -59,7 +59,7 @@ layout: default
     <div class="download-links">
       {% for download in plugin.downloads %}
         {% assign download_url = '/download/' | append: plugin.slug | append: '/' | append: download.file %}
-        <a class="button" href="{{ download_url | relative_url }}" download>{{ download.platform }} <span aria-hidden="true">↓</span></a>
+        <a class="button" href="{{ download_url | relative_url }}" download>{{ download.platform }} {% include arrow.html direction="down" %}</a>
       {% endfor %}
     </div>
     {% if plugin.download_footer %}<p class="install-note">{{ plugin.download_footer }}</p>{% endif %}
