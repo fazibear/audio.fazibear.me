@@ -1,4 +1,4 @@
-version: 0.0.0
+version: "0.1.0"
 name: Llamafier
 category: MP3 compression effect
 description: Turn real MP3 compression into a creative effect. Llamafier processes your audio through the LAME codec, with Bitrate and Quality controls to shape the compression artifacts.
