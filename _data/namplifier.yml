@@ -1,19 +1,82 @@
-version: "0.9.5"
+version: 0.9.5
+slug: namplifier
 name: Namplifier
-category: Virtual guitar amplifier
-description: Bring Neural Amp Modeler tones into your DAW. Load amp models from the web and complete your signal chain with cabinet impulse responses, a three-band EQ, and a noise gate.
-image: /assets/plugins/namplifier.png
+image: "/assets/plugins/namplifier.png"
 image_width: 1080
 image_height: 1057
-slug: namplifier
+category: Virtual guitar amplifier
+headline: Your next guitar tone starts here.
+description: |
+  Bring Neural Amp Modeler tones into your DAW. Load amp models from the web and
+  complete your signal chain with cabinet impulse responses, a three-band EQ, and a
+  noise gate.
 features:
-  - Amp tones from the web
-  - Cabinet realism
-  - Tight high-gain tones
+- Amp tones from the web
+- Cabinet realism
+- Tight high-gain tones
+formats:
+  - VST3
+  - CLAP
+sections:
+- title: Features
+  features:
+  - title: Neural Amp Modeler profiles
+    text: |
+      Load authentic amp models straight from the web. Explore vintage tube warmth and
+      modern high-gain sounds from a single plugin.
+    image: "/assets/plugins/namplifier/nam.png"
+    image_alt: Neural Amp Modeler
+  - title: NAM A2
+    text: |
+      Support for the next-generation Neural Amp Modeler architecture, including model
+      slimming.
+    image: "/assets/plugins/namplifier/a2.png"
+    image_alt: NAM A2
+  - title: Tone3000
+    text: |
+      Browse community guitar tones, bass tones, and studio equipment captures from inside
+      your DAW.
+    image: "/assets/plugins/namplifier/tone3000.jpg"
+    image_alt: Tone3000
+  - title: Impulse response loader
+    text: |
+      Complete your signal chain with cabinet impulse responses for realistic cabinet
+      simulation.
+    image: "/assets/plugins/namplifier/ir.jpg"
+    image_alt: Impulse response loader
+  - title: Noise gate
+    text: Keep high-gain tones tight with an integrated noise gate and threshold control.
+  - title: Three-band equalizer
+    text: Shape your tone with dedicated Bass, Mid, and Treble controls.
+- title: FAQ
+  faq:
+  - question: |
+      Why can’t I type inside the plugin?
+    answer: |
+      Configure your DAW to pass keyboard input to the plugin. In Reaper, click the + button at the top of the FX window and select “Send all keyboard input to plug-in”.
+  - question: |
+      Why doesn’t Namplifier appear in my DAW on Windows?
+    answer: |
+      Try installing the <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version">Microsoft Visual C++ Redistributable</a>, then rescan your plugins.
+  - question: |
+      What dependencies does the Linux version need?
+    answer: |
+      The Linux build is the least-tested version. The original build uses Ubuntu with the following dependencies:
+      <pre><code>sudo apt install libwayland-dev libx11-xcb-dev libxcb-dri2-0-dev libgl1-mesa-dev libxcb-icccm4-dev libxcursor-dev libxcb-{render,shape,xfixes}0-dev libasound2-dev libgl-dev libjack-dev libxcb1-dev libxkbcommon-dev libfontconfig1-dev</code></pre>
+- title: Join the Community!
+  community:
+  - name: Discord
+    url: https://discord.gg/bKmZtgGYfV
+  - name: X
+    url: https://x.com/namplifier666
+  - name: Reddit
+    url: https://www.reddit.com/r/namplifier
 downloads:
-  - platform: macOS
-    file: namplifier-macos.pkg
-  - platform: Windows
-    file: namplifier-windows.exe
-  - platform: Linux
-    file: namplifier-linux.tar.gz
+- platform: macOS
+  file: namplifier-macos.pkg
+- platform: Windows
+  file: namplifier-windows.exe
+- platform: Linux
+  file: namplifier-linux.tar.gz
+download_footer: |
+  The code is unsigned and may require additional permissions during installation.

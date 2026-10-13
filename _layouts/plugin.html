@@ -1,32 +1,56 @@
 ---
 layout: default
 ---
-{% assign plugin = site.data[page.plugin] %}
-<div class="plugin-page plugin-{{ page.plugin }}">
+{% assign plugin = page.plugin %}
+<div class="plugin-page plugin-{{ plugin.slug }}">
   <section class="product-hero" aria-labelledby="product-title">
     <div class="product-intro">
       <a class="back-link" href="{{ '/' | relative_url }}#plugins">← All plugins</a>
       <p class="eyebrow">{{ plugin.category }}</p>
       <h1 id="product-title">{{ plugin.name }}</h1>
-      <p class="product-headline">{{ page.headline }}</p>
+      <p class="product-headline">{{ plugin.headline }}</p>
       <p class="product-summary">{{ plugin.description }}</p>
       {% if plugin.downloads.size > 0 %}
         <a class="button" href="#download">Download {{ plugin.name }} <span aria-hidden="true">↓</span></a>
       {% else %}
         <a class="button" href="#controls">Explore the controls <span aria-hidden="true">↓</span></a>
       {% endif %}
-      {% if page.formats %}<p class="product-formats">{{ page.formats }}</p>{% endif %}
+      {% if plugin.formats %}<p class="product-formats">{{ plugin.formats | join: ' / ' }}</p>{% endif %}
     </div>
     <div class="product-artwork gothic-frame">
       <img class="product-image" src="{{ plugin.image | relative_url }}" alt="{{ plugin.name }} plugin interface" width="{{ plugin.image_width }}" height="{{ plugin.image_height }}" fetchpriority="high">
     </div>
   </section>
-  <nav class="product-nav" aria-label="{{ plugin.name }} page sections">
-    {% for section in page.sections %}<a href="#{{ section.id }}">{{ section.label }}</a>{% endfor %}
-    {% if plugin.downloads.size > 0 %}<a href="#download">Download</a>{% endif %}
-    {% if page.community %}<a href="#community">Community</a>{% endif %}
-  </nav>
-  {{ content }}
+  {% for section in plugin.sections %}
+  {% assign section_id = section.title | strip_html | slugify %}
+  <section class="product-section{% if section.faq %} product-faq{% endif %}" id="{% if section.controls %}controls{% else %}{{ section_id }}{% endif %}" aria-labelledby="{{ section_id }}-title">
+    <p class="eyebrow">{{ section.eyebrow }}</p>
+    <h2 id="{{ section_id }}-title">{{ section.title }}</h2>
+    {% if section.text %}<p>{{ section.text }}</p>{% endif %}
+    {% if section.controls %}
+    <ul class="plugin-features" aria-label="{{ plugin.name }} controls">
+      {% for control in section.controls %}<li>{{ control }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% if section.features %}
+    <div class="product-feature-grid">
+      {% for feature in section.features %}
+      <article>
+        {% if feature.image %}<img src="{{ feature.image | relative_url }}" alt="{{ feature.image_alt | escape }}" loading="lazy">{% endif %}
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% for item in section.faq %}<details><summary>{{ item.question }}</summary>{{ item.answer }}</details>{% endfor %}
+    {% if section.community %}
+    <div class="community-links" aria-label="{{ plugin.name }} community">
+      {% for community in section.community %}<a href="{{ community.url }}">{{ community.name }} <span aria-hidden="true">↗</span></a>{% endfor %}
+    </div>
+    {% endif %}
+  </section>
+  {% endfor %}
   {% if plugin.downloads.size > 0 %}
   <section class="product-section product-download-section" id="download" aria-labelledby="download-title">
     <p class="eyebrow">Download</p>
@@ -38,16 +62,7 @@ layout: default
         <a class="button" href="{{ download_url | relative_url }}" download>{{ download.platform }} <span aria-hidden="true">↓</span></a>
       {% endfor %}
     </div>
-    {% if page.install_note %}<p class="install-note">{{ page.install_note }}</p>{% endif %}
-  </section>
-  {% endif %}
-  {% if page.community %}
-  <section class="product-section" id="community" aria-labelledby="community-title">
-    <p class="eyebrow">{{ plugin.name }}</p>
-    <h2 id="community-title">Join the community.</h2>
-    <div class="community-links" aria-label="{{ plugin.name }} community">
-      {% for community in page.community %}<a href="{{ community.url }}">{{ community.name }} <span aria-hidden="true">↗</span></a>{% endfor %}
-    </div>
+    {% if plugin.download_footer %}<p class="install-note">{{ plugin.download_footer }}</p>{% endif %}
   </section>
   {% endif %}
 </div>

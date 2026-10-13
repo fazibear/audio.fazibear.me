@@ -1,20 +1,32 @@
-version: "0.1.0"
+version: 0.1.0
+slug: llamafier
 name: Llamafier
-category: MP3 compression effect
-description: Turn real MP3 compression into a creative effect. Llamafier processes your audio through the LAME codec, with Bitrate and Quality controls to shape the compression artifacts.
-image: /assets/plugins/llamafier.png
+image: "/assets/plugins/llamafier.png"
 image_width: 2094
 image_height: 1310
-slug: llamafier
+category: MP3 compression effect
+headline: Make compression part of the sound.
+description: |
+  Turn real MP3 compression into a creative effect. Llamafier processes your audio
+  through the LAME codec, with Bitrate and Quality controls to shape the compression
+  artifacts.
 features:
   - Real LAME MP3 processing
   - Adjustable bitrate
   - Encoder quality control
+sections:
+- eyebrow: The engine
+  title: Real MP3 compression.<br>Real artifacts.
+  text: |
+    Llamafier adds the sound of lossy MP3 compression by actually encoding and decoding
+    your audio through the LAME codec. Bring those compression artifacts into your mix and
+    use them as part of the texture.
 downloads:
-  - platform: macOS
-    file: llamafier-macos.pkg
-  - platform: Windows
-    file: llamafier-windows.exe
-  - platform: Linux
-    file: llamafier-linux.tar.gz
-
+- platform: macOS
+  file: llamafier-macos.pkg
+- platform: Windows
+  file: llamafier-windows.exe
+- platform: Linux
+  file: llamafier-linux.tar.gz
+download_footer: |
+  The code is unsigned and may require additional permissions during installation.

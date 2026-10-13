@@ -1,19 +1,38 @@
-version: "0.9.5"
+version: 0.9.5
+slug: swampdrain
 name: SwampDrain
-category: Low-tuning clarity
-description: Clear the mud from down-tuned guitars and basses while keeping their weight, impact, and character. Restore pick definition and keep individual notes readable with four focused controls.
-image: /assets/plugins/swampdrain.png
+image: "/assets/plugins/swampdrain.png"
 image_width: 818
 image_height: 1134
-slug: swampdrain
+category: Low-tuning clarity
+headline: Make low tunings clear.
+description: |
+  Clear the mud from down-tuned guitars and basses while keeping their weight, impact,
+  and character. Restore pick definition and keep individual notes readable with four
+  focused controls.
 features:
   - Low-mid clarity
   - Note definition
   - Harmonic weight
+formats:
+  - VST3
+  - AU
+  - CLAP
+sections:
+- eyebrow: The engine
+  title: |
+    Keep the weight.<br>
+    Lose the mud.
+  text: |
+    Low tunings create energy exactly where dense mixes become crowded. SwampDrain
+    controls that buildup, restores pick definition, and keeps individual notes readable
+    without thinning out the performance.
 downloads:
-  - platform: macOS
-    file: swampdrain-macos.pkg
-  - platform: Windows
-    file: swampdrain-windows.exe
-  - platform: Linux
-    file: swampdrain-linux.tar.gz
+- platform: macOS
+  file: swampdrain-macos.pkg
+- platform: Windows
+  file: swampdrain-windows.exe
+- platform: Linux
+  file: swampdrain-linux.tar.gz
+download_footer: |
+  The code is unsigned and may require additional permissions during installation.
