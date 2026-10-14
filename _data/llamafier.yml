@@ -10,6 +10,10 @@ description: |
   Turn real MP3 compression into a creative effect. Llamafier processes your audio
   through the LAME codec, with Bitrate and Quality controls to shape the compression
   artifacts.
+formats:
+  - VST3
+  - AU
+  - CLAP
 features:
   - Real LAME MP3 processing
   - Adjustable bitrate
