@@ -30,3 +30,12 @@ sections:
   - Low & high
   - Middle
   - Middle frequency
+downloads:
+- platform: macOS
+  file: mt666-macos.pkg
+- platform: Windows
+  file: mt666-windows.exe
+- platform: Linux
+  file: mt666-linux.tar.gz
+download_footer: |
+  The code is unsigned and may require additional permissions during installation.
