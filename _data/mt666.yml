@@ -12,13 +12,6 @@ features:
 - Heavy guitar distortion
 - Low-end weight
 - Midrange character
-downloads:
-- platform: macOS
-  file: mt666-macos.pkg
-- platform: Windows
-  file: mt666-windows.exe
-- platform: Linux
-  file: mt666-linux.tar.gz
 headline: Enter the heavy zone.
 sections:
 - eyebrow: Metal distortion
