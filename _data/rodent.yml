@@ -1,0 +1,35 @@
+version: "0.1.0"
+name: Rodent
+slug: rodent
+category: Guitar distortion
+headline: RAT-inspired guitar distortion.
+description: |
+  A circuit-modeled guitar distortion plugin inspired by the RAT pedal.
+  Bring classic pedal distortion into your DAW, with the original circuit as
+  the foundation and support for mono and stereo tracks.
+image: "/assets/plugins/rodent.png"
+image_width: 1988
+image_height: 796
+formats:
+- VST3
+- CLAP
+features:
+- RAT-inspired distortion
+- Circuit modeling
+- Mono and stereo processing
+sections:
+- eyebrow: The engine
+  title: Classic circuit.<br>Modern workflow.
+  text: |
+    Rodent models the analog distortion circuit rather than applying a generic
+    waveshaper. Its drive, clipping and filtering stages work together to recreate
+    the behavior of the pedal, with oversampled processing inside your DAW.
+downloads:
+- platform: macOS
+  file: rodent-macos.pkg
+- platform: Windows
+  file: rodent-windows.exe
+- platform: Linux
+  file: rodent-linux.tar.gz
+download_footer: |
+  The code is unsigned and may require additional permissions during installation.

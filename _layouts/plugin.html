@@ -12,8 +12,6 @@ layout: default
       <p class="product-summary">{{ plugin.description }}</p>
       {% if plugin.downloads.size > 0 %}
         <a class="button" href="#download">Download {{ plugin.name }} {% include arrow.html direction="down" %}</a>
-      {% else %}
-        <a class="button" href="#controls">Explore the controls {% include arrow.html direction="down" %}</a>
       {% endif %}
       {% if plugin.formats %}<p class="product-formats">{{ plugin.formats | join: ' / ' }}</p>{% endif %}
     </div>
