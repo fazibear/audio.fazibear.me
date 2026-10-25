@@ -57,10 +57,21 @@ layout: default
     <div class="download-links">
       {% for download in plugin.downloads %}
         {% assign download_url = '/download/' | append: plugin.slug | append: '/' | append: download.file %}
-        <a class="button" href="{{ download_url | relative_url }}" download>{{ download.platform }} {% include arrow.html direction="down" %}</a>
+        <a class="button" href="{{ download_url | relative_url }}" download data-download-prompt>{{ download.platform }} {% include arrow.html direction="down" %}</a>
       {% endfor %}
     </div>
     {% if plugin.download_footer %}<p class="install-note">{{ plugin.download_footer }}</p>{% endif %}
+    <dialog class="download-dialog gothic-frame" aria-labelledby="download-dialog-title">
+      <form method="dialog"><button class="download-dialog-close" aria-label="Close download popup">✕</button></form>
+      <div class="download-dialog-intro">
+        <h2 id="download-dialog-title">Support Fazi Audio</h2>
+      </div>
+      {% include kofi-widget.html %}
+      <div class="download-dialog-actions">
+        <a class="button" data-download-confirm download>Download</a>
+        <span class="download-dialog-note">Free to download. No donation required.</span>
+      </div>
+    </dialog>
   </section>
   {% endif %}
 </div>

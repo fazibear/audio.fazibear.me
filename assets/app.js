@@ -1,4 +1,27 @@
 (() => {
+  const dialog = document.querySelector('.download-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    const confirm = dialog.querySelector('[data-download-confirm]');
+    const frame = dialog.querySelector('#kofiframe');
+    document.querySelectorAll('[data-download-prompt]').forEach(link => {
+      link.addEventListener('click', event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        confirm.href = link.href;
+        confirm.textContent = `Download for ${link.textContent.trim()}`;
+        if (frame && !frame.hasAttribute('src')) frame.src = frame.dataset.src;
+        dialog.showModal();
+      });
+    });
+    confirm.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const bounds = dialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+    });
+  }
+
   const links = [...document.querySelectorAll('nav a')].filter(link => link.pathname === window.location.pathname && link.hash);
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

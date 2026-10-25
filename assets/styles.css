@@ -269,6 +269,60 @@ footer small { font-size: 12px; }
 .plugin-namplifier .product-feature-grid article { isolation: isolate; }
 .plugin-namplifier .product-feature-grid img { mix-blend-mode: screen; }
 
+.download-dialog {
+  position: fixed;
+  width: min(600px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  color: var(--text);
+  background: #0b0b0c;
+  border-radius: 0;
+  box-shadow: 0 30px 100px #000c, inset 0 1px #ffffff12;
+}
+.download-dialog[open] { display: flex; flex-direction: column; }
+.download-dialog > :not(.kofi-widget) { flex-shrink: 0; }
+.download-dialog {
+  scrollbar-width: thin;
+  scrollbar-color: #625b58 #0b0b0c;
+}
+.download-dialog::-webkit-scrollbar { width: 8px; }
+.download-dialog::-webkit-scrollbar-track { background: #0b0b0c; }
+.download-dialog::-webkit-scrollbar-thumb { background: #625b58; border: 2px solid #0b0b0c; border-radius: 4px; }
+.download-dialog::-webkit-scrollbar-thumb:hover { background: #8e8580; }
+.download-dialog::backdrop { background: rgb(0 0 0 / 85%); backdrop-filter: blur(6px); }
+.download-dialog-intro { padding: 18px 36px 14px; text-align: center; }
+.download-dialog .eyebrow { margin: 0 20px 14px; color: #bc777a; }
+.download-dialog h2 { margin: 0 12px 8px; font-size: clamp(28px, 5vw, 40px); }
+.download-dialog-intro > p:not(.eyebrow) { max-width: 400px; margin: 0 auto 22px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.download-dialog .button { width: 100%; max-width: 360px; min-height: 48px; background: #650b11; border-color: #a23239; color: #eee; }
+.download-dialog .button:hover { background: #85111a; border-color: #cb7076; }
+.download-dialog-actions { padding: 0 20px 28px; text-align: center; }
+.download-dialog-note { display: block; margin-top: 10px; font-size: 11px; color: var(--muted); }
+.kofi-widget { margin: 0 20px 20px; display: flex; justify-content: center; height: 580px; flex: 0 1 580px; min-height: 0; }
+.kofi-widget iframe { filter: invert(1) hue-rotate(180deg); display: block; width: 100%; min-width: 0; height: auto; min-height: 0; align-self: stretch; flex-shrink: 0; padding: 0; border: none; }
+body:has(.download-dialog[open]) { overflow: hidden; }
+@media (max-width: 600px) {
+  .download-dialog-intro { padding: 16px 20px 12px; }
+  .kofi-widget { margin: 0 10px 10px; }
+}
+.download-dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 50%;
+  transition: background .2s, color .2s;
+}
+.download-dialog-close:hover { background: #ffffff12; color: #fff; }
+
 .heading-ornament { display: inline-block; font-family: Georgia, serif; font-size: .5em; color: var(--heading); vertical-align: middle; letter-spacing: 0; margin: 0 .45em; }
 
 .main-community { position: relative; max-width: 860px; margin: auto; padding: 60px 30px; text-align: center; }
