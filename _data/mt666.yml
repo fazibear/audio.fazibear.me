@@ -20,15 +20,6 @@ sections:
     Inspired by the Metal Zone, MT666 puts distortion and tone shaping at your fingertips.
     Adjust the lows and highs, then use the middle level and frequency controls to find
     your place in the mix.
-- eyebrow: Controls
-  title: Dial in the aggression.
-  controls:
-  - Input level
-  - Distortion
-  - Output level
-  - Low & high
-  - Middle
-  - Middle frequency
 downloads:
 - platform: macOS
   file: mt666-macos.pkg
