@@ -6,7 +6,7 @@ description: |
   and presence controls, with input and output levels to fit your signal chain.
 image: "/assets/plugins/gloom-amp.png"
 image_width: 1986
-image_height: 784
+image_height: 768
 slug: gloom-amp
 headline: Go low. Get heavy.
 features:
