@@ -4,10 +4,10 @@ category: Low-tuned guitar amplifier
 description: |
   A virtual amplifier for low-tuned guitars. Shape your sound with drive, three-band EQ,
   and presence controls, with input and output levels to fit your signal chain.
-image: "/assets/plugins/gloom-amp.png"
+image: "/assets/plugins/gloom_amp.png"
 image_width: 1986
 image_height: 768
-slug: gloom-amp
+slug: gloom_amp
 headline: Go low. Get heavy.
 features:
 - Low-tuned amplification
