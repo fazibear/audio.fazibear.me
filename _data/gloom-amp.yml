@@ -5,26 +5,28 @@ description: |
   A virtual amplifier for low-tuned guitars. Shape your sound with drive, three-band EQ,
   and presence controls, with input and output levels to fit your signal chain.
 image: "/assets/plugins/gloom-amp.png"
-image_width: 1983
-image_height: 793
+image_width: 1986
+image_height: 784
 slug: gloom-amp
+headline: Go low. Get heavy.
 features:
 - Low-tuned amplification
 - Gain and character
 - High-end bite
-downloads: []
-headline: Go low. Get heavy.
 sections:
 - eyebrow: Low-tuned amplification
   title: A darker kind of heavy.
   text: |
     Gloom Amp is a virtual amplifier for low-tuned guitars. Dial in the drive, shape the
     lows, mids, and highs, and adjust presence to bring your tone into focus.
-- eyebrow: Controls
-  title: Shape your sound.
-  controls:
-  - Input
-  - Drive
-  - Low, mid & high
-  - Presence
-  - Output
+    A separate cabinet emulation plugin or IR loader is required.
+downloads:
+- platform: macOS
+  file: rodent-macos.pkg
+- platform: Windows
+  file: rodent-windows.exe
+- platform: Linux
+  file: rodent-linux.tar.gz
+download_footer: |
+  The code is unsigned and may require additional permissions during installation.
+
