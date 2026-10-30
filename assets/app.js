@@ -22,6 +22,19 @@
     });
   }
 
+  const imageDialog = document.querySelector('.image-dialog');
+  const imageLink = document.querySelector('.product-image-zoom');
+  if (imageDialog && imageLink && typeof imageDialog.showModal === 'function') {
+    imageLink.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      imageDialog.showModal();
+    });
+    imageDialog.addEventListener('click', event => {
+      if (event.target === imageDialog) imageDialog.close();
+    });
+  }
+
   const links = [...document.querySelectorAll('nav a')].filter(link => link.pathname === window.location.pathname && link.hash);
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

@@ -16,9 +16,15 @@ layout: default
       {% if plugin.formats %}<p class="product-formats">{{ plugin.formats | join: ' / ' }}</p>{% endif %}
     </div>
     <div class="product-artwork gothic-frame">
-      <img class="product-image" src="{{ plugin.image | relative_url }}" alt="{{ plugin.name }} plugin interface" width="{{ plugin.image_width }}" height="{{ plugin.image_height }}" fetchpriority="high">
+      <a class="product-image-zoom" href="{{ plugin.image | relative_url }}" aria-label="Enlarge {{ plugin.name | escape }} screenshot">
+        <img class="product-image" src="{{ plugin.image | relative_url }}" alt="{{ plugin.name }} plugin interface" width="{{ plugin.image_width }}" height="{{ plugin.image_height }}" fetchpriority="high">
+      </a>
     </div>
   </section>
+  <dialog class="image-dialog gothic-frame" aria-label="{{ plugin.name | escape }} screenshot">
+    <form method="dialog"><button class="download-dialog-close" aria-label="Close screenshot">✕</button></form>
+    <img src="{{ plugin.image | relative_url }}" alt="{{ plugin.name }} plugin interface" width="{{ plugin.image_width }}" height="{{ plugin.image_height }}">
+  </dialog>
   {% for section in plugin.sections %}
   {% assign section_id = section.title | strip_html | slugify %}
   <section class="product-section{% if section.faq %} product-faq{% endif %}" id="{% if section.controls %}controls{% else %}{{ section_id }}{% endif %}" aria-labelledby="{{ section_id }}-title">

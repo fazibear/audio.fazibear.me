@@ -260,6 +260,17 @@ footer small { font-size: 12px; }
   width: 100%;
 }
 .product-artwork .product-image { max-height: 400px; }
+.product-image-zoom { display: block; min-width: 0; cursor: zoom-in; }
+.image-dialog {
+  margin: auto;
+  padding: 48px 16px 16px;
+  max-width: 96vw;
+  max-height: 96dvh;
+  color: var(--text);
+}
+.image-dialog img { display: block; width: auto; height: auto; max-width: 100%; max-height: calc(96dvh - 114px); object-fit: contain; }
+.image-dialog::backdrop { background: rgb(0 0 0 / 85%); }
+body:has(.image-dialog[open]) { overflow: hidden; }
 @media (max-width: 600px) {
   .gothic-frame { border-width: 20px; border-image-width: 20px; padding: 8px; }
   .product-artwork .product-image { max-height: 330px; }
