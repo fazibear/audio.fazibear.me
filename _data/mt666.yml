@@ -2,14 +2,14 @@ version: "0.8.0"
 name: MT666
 category: Metal distortion
 description: |
-  Metal Zone-inspired distortion for heavy guitar tones. Shape the low end, dial in the
+  Circuit-modeled, Metal Zone-inspired distortion for heavy guitar tones. Shape the low end, dial in the
   mids with a dedicated frequency control, and set the bite with the high EQ.
 image: "/assets/plugins/mt666.png"
 image_width: 1016
 image_height: 1548
 slug: mt666
 features:
-- Heavy guitar distortion
+- Circuit-modeled distortion
 - Low-end weight
 - Midrange character
 headline: Enter the heavy zone.
