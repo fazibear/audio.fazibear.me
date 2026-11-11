@@ -1,4 +1,4 @@
-version: 0.9.5
+version: "0.9.8"
 slug: swampdrain
 name: SwampDrain
 image: "/assets/plugins/swampdrain.png"
